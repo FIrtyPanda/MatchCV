@@ -75,7 +75,7 @@ const UploadForm = ({ onResult }) => {
     formData.append("file", file)
 
     try {
-      const res = await axios.post("http://localhost:8000/cv/upload", formData, {
+      const res = await axios.post("/cv/upload", formData, {
         headers: { "Content-Type": "multipart/form-data" },
         withCredentials: true,
       })

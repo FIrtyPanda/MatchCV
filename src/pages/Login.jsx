@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom"
 import { useContext } from "react"
 import { UserContext } from "../contexts/UserContext"
 
+const api = import.meta.env.VITE_API_BASE_URL
+
 const Login = () => {
   const [form, setForm] = useState({ username: "", password: "" })
   const [error, setError] = useState("")
@@ -32,7 +34,7 @@ const Login = () => {
     setError("")
 
     try {
-      await axios.post("http://localhost:8000/auth/login", new URLSearchParams(form), {
+      await axios.post("${api}/auth/login", new URLSearchParams(form), {
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
         },

@@ -4,6 +4,8 @@ import { useState } from "react"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
 
+const api = import.meta.env.VITE_API_BASE_URL
+
 const Register = () => {
   const [form, setForm] = useState({ username: "", email: "", password: "" })
   const [error, setError] = useState("")
@@ -102,7 +104,7 @@ const Register = () => {
     setError("")
 
     try {
-      await axios.post("http://localhost:8000/auth/register", new URLSearchParams(form), {
+      await axios.post("${api}/auth/register", new URLSearchParams(form), {
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
         },

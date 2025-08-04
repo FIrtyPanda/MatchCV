@@ -19,6 +19,8 @@ import {
 import axios from "axios"
 import { UserContext } from "../contexts/UserContext"
 
+const api = import.meta.env.VITE_API_BASE_URL
+
 const Dashboard = ({ children }) => {
   const { user, setUser, history } = useContext(UserContext)
   const [sidebarOpen, setSidebarOpen] = useState(true)
@@ -46,7 +48,7 @@ const Dashboard = ({ children }) => {
   const handleLogout = async () => {
     setLoading(true)
     try {
-      await axios.post("http://localhost:8000/auth/logout", {}, { withCredentials: true })
+      await axios.post("${api}/auth/logout", {}, { withCredentials: true })
       setUser(null)
       navigate("/")
     } catch (error) {
@@ -87,7 +89,7 @@ const Dashboard = ({ children }) => {
 
     setDeleteLoading(true)
     try {
-      await axios.delete(`http://localhost:8000/cv/delete-upload/${deleteModal.item.id}`, {
+      await axios.delete(`${api}/cv/delete-upload/${deleteModal.item.id}`, {
         withCredentials: true,
       })
 
