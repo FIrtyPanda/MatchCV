@@ -34,7 +34,7 @@ const Login = () => {
     setError("")
 
     try {
-      await axios.post("${api}/auth/login", new URLSearchParams(form), {
+      await axios.post(`${api}/auth/login`, new URLSearchParams(form), {
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
         },

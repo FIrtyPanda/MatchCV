@@ -14,7 +14,7 @@ export const UserProvider = ({ children }) => {
   const fetchUser = useCallback(async () => {
     setLoadingUser(true); // mulai loading
     try {
-      const res = await axios.get('${api}/auth/me', {
+      const res = await axios.get(`${api}/auth/me`, {
         withCredentials: true,
       });
       setUser(res.data.user);
@@ -29,7 +29,7 @@ export const UserProvider = ({ children }) => {
   const fetchHistory = useCallback(async () => {
     if (!user) return;
     try {
-      const res = await axios.get('${api}/cv/my-uploads', {
+      const res = await axios.get(`${api}/cv/my-uploads`, {
         withCredentials: true,
       });
       setHistory(res.data);

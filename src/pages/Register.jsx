@@ -104,7 +104,7 @@ const Register = () => {
     setError("")
 
     try {
-      await axios.post("${api}/auth/register", new URLSearchParams(form), {
+      await axios.post(`${api}/auth/register`, new URLSearchParams(form), {
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
         },

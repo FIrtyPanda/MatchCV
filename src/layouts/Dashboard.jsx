@@ -48,7 +48,7 @@ const Dashboard = ({ children }) => {
   const handleLogout = async () => {
     setLoading(true)
     try {
-      await axios.post("${api}/auth/logout", {}, { withCredentials: true })
+      await axios.post(`${api}/auth/logout`, {}, { withCredentials: true })
       setUser(null)
       navigate("/")
     } catch (error) {
