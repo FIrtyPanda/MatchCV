@@ -3,7 +3,11 @@ import axios from 'axios';
 
 export const UserContext = createContext();
 
+<<<<<<< HEAD:src/contexts/UserContext.jsx
 const api = import.meta.env.VITE_API_BASE_URL
+=======
+const api = import.meta.env.VITE_API_BASE_URL;
+>>>>>>> 7eb0ea0 (update):client/src/contexts/UserContext.jsx
 
 export const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
