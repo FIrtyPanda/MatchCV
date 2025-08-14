@@ -41,11 +41,7 @@ const MatchCVBoard = ({ uploadId, onUpload }) => {
     setLoading(true)
 
     try {
-<<<<<<< HEAD:src/components/MatchCVBoard.jsx
-      const res = await axios.post("/cv/chat", { message: userMessage, upload_id: localUploadId }, { withCredentials: true })
-=======
       const res = await axios.post(`${api}/cv/chat`, { message: userMessage, upload_id: localUploadId }, { withCredentials: true })
->>>>>>> 7eb0ea0 (update):client/src/components/MatchCVBoard.jsx
       setChatHistory((prev) => [...prev, { role: "llm", text: res.data.response }])
     } catch (err) {
       console.error(err)
@@ -83,11 +79,7 @@ const MatchCVBoard = ({ uploadId, onUpload }) => {
     const fetchHistory = async () => {
       if (!localUploadId) return
       try {
-<<<<<<< HEAD:src/components/MatchCVBoard.jsx
-        const res = await axios.get(`/cv/chat-history/${localUploadId}`, {
-=======
         const res = await axios.get(`${api}/cv/chat-history/${localUploadId}`, {
->>>>>>> 7eb0ea0 (update):client/src/components/MatchCVBoard.jsx
           withCredentials: true
         })
         const history = res.data.map((c) => ({
