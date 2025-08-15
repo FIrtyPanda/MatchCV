@@ -6,11 +6,7 @@ import { useNavigate } from "react-router-dom"
 import { useContext } from "react"
 import { UserContext } from "../contexts/UserContext"
 
-<<<<<<< HEAD:src/pages/Login.jsx
-const api = import.meta.env.VITE_API_BASE_URL
-=======
 const api = import.meta.env.VITE_API_BASE_URL;
->>>>>>> 7eb0ea0 (update):client/src/pages/Login.jsx
 
 const Login = () => {
   const [form, setForm] = useState({ username: "", password: "" })

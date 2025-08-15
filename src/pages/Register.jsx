@@ -4,11 +4,7 @@ import { useState } from "react"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
 
-<<<<<<< HEAD:src/pages/Register.jsx
-const api = import.meta.env.VITE_API_BASE_URL
-=======
 const api = import.meta.env.VITE_API_BASE_URL;
->>>>>>> 7eb0ea0 (update):client/src/pages/Register.jsx
 
 const Register = () => {
   const [form, setForm] = useState({ username: "", email: "", password: "" })

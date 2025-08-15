@@ -19,11 +19,7 @@ import {
 import axios from "axios"
 import { UserContext } from "../contexts/UserContext"
 
-<<<<<<< HEAD:src/layouts/Dashboard.jsx
-const api = import.meta.env.VITE_API_BASE_URL
-=======
 const api = import.meta.env.VITE_API_BASE_URL;
->>>>>>> 7eb0ea0 (update):client/src/layouts/Dashboard.jsx
 
 const Dashboard = ({ children }) => {
   const { user, setUser, history } = useContext(UserContext)
